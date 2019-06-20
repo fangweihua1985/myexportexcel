@@ -91,8 +91,9 @@ public class ExcelUtil<T> {
         Cell cell;// 产生单元格
         ExcelVOAttribute attr;
         Field field;
+        int fieldSize = fields.size();
         row = sheet.createRow(0);// 产生一行
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < fieldSize; i++) {
             field = fields.get(i);
             attr = field.getAnnotation(ExcelVOAttribute.class);
             cell = CellUtil.createCell(row, i, attr.name());
